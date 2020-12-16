@@ -5,6 +5,7 @@
     <RazorLangVersion>3.0</RazorLangVersion>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'BlazingPizza' " />
   <ItemGroup>
     <Content Include="images\icon-512.png" />
   </ItemGroup>
@@ -23,6 +24,7 @@
   <ItemGroup>
     <Folder Include="wwwroot\css\font\" />
     <Folder Include="images\" />
+    <Folder Include="Constants\" />
   </ItemGroup>
 
 </Project>

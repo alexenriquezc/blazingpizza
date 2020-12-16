@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
+using Npgsql.EntityFrameworkCore;
 namespace BlazingPizza.Server
 {
     public class Startup
@@ -23,7 +23,8 @@ namespace BlazingPizza.Server
         {
             services.AddDbContext<PizzaStoreConext>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("PizzaStoreContext"));
+                //options.UseSqlServer(Configuration.GetConnectionString("PizzaStoreContext"));
+                options.UseNpgsql(Configuration.GetConnectionString("PizzaStoreContext"));
             });
 
             services.AddControllersWithViews();
