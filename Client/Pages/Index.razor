@@ -9,7 +9,8 @@
         @if (specials != null)
         {
             <Virtualize Context="special" Items="@specials">
-                <li style="background-image:url('@special.ImageUrl')">
+                <li @onclick="@(() => ShowPizzaInfo(special))"
+                    style="background-image:url('@special.ImageUrl')">
                     <div class="pizza-info">
                         <span class="title">@special.Name</span>
                         @special.Description
@@ -30,5 +31,10 @@
     protected async override Task OnInitializedAsync()
     {
         specials = await httpClient.GetFromJsonAsync<List<PizzaSpecial>>(ClientConstants.SPECIALS_PATH);
+    }
+
+    protected void ShowPizzaInfo(PizzaSpecial pizza)
+    {
+        Console.WriteLine(pizza.Name);
     }
 }

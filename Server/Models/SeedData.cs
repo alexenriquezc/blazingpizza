@@ -67,6 +67,21 @@ namespace BlazingPizza.Server.Models
 
             };
 
+            var toppings = new Topping[]
+            {
+                new Topping
+                {
+                    Name = "Queso extra",
+                    Price = 47.50m
+                },
+
+                new Topping
+                {
+                    Name = "Tocino de pavo",
+                    Price = 47.50m
+                },
+            };
+
             context.Specials.AddRange(specials);
             context.SaveChanges();
         }

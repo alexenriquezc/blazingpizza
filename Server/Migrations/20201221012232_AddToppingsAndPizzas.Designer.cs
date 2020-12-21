@@ -2,15 +2,17 @@
 using BlazingPizza.Server.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace BlazingPizza.Server.Migrations
 {
     [DbContext(typeof(PizzaStoreConext))]
-    partial class PizzaStoreConextModelSnapshot : ModelSnapshot
+    [Migration("20201221012232_AddToppingsAndPizzas")]
+    partial class AddToppingsAndPizzas
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
